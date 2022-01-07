@@ -44,4 +44,32 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 // require_once(get_template_directory().'/functions/login.php'); 
 
 // Customize the WordPress admin
-// require_once(get_template_directory().'/functions/admin.php'); 
+// require_once(get_template_directory().'/functions/admin.php');
+
+function remove_editor() {
+    remove_post_type_support('page', 'editor');
+}
+add_action('admin_init', 'remove_editor');
+
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+        'page_title' 	=> __('Tēmas iestatījumi'),
+        'menu_title'	=> __('Tēmas iestatījumi'),
+        'menu_slug' 	=> 'theme-general-settings',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
+    ));
+
+}
+
+function get_svg_icon( $icon_path ) {
+    $path = get_stylesheet_directory() . '/assets/images/' . $icon_path . '.svg';
+    if ( file_exists( $path ) ) {
+        $content = file_get_contents( $path );
+    } else {
+        $content = null;
+    }
+
+    return $content;
+}

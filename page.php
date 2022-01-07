@@ -7,24 +7,18 @@
 
 get_header(); ?>
 	
-	<div class="content">
-	
-		<div class="inner-content grid-x grid-margin-x grid-padding-x">
-	
-		    <main class="main small-12 large-8 medium-8 cell" role="main">
-				
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<main class="content">
 
-			    	<?php get_template_part( 'parts/loop', 'page' ); ?>
-			    
-			    <?php endwhile; endif; ?>							
-			    					
-			</main> <!-- end #main -->
+        <?php
 
-		    <?php get_sidebar(); ?>
-		    
-		</div> <!-- end #inner-content -->
+        if( have_rows('flexible') ):
+            while( have_rows('flexible') ) : the_row();
+                get_template_part( 'templates/blocks/layout', get_row_layout() );
+            endwhile;
+        endif;
 
-	</div> <!-- end #content -->
+        ?>
+
+    </main>
 
 <?php get_footer(); ?>

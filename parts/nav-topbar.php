@@ -6,13 +6,13 @@
  */
 ?>
 
-<div class="top-bar" id="main-menu">
-	<div class="top-bar-left">
-		<ul class="menu">
-			<li><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
-		</ul>
-	</div>
-	<div class="top-bar-right">
-		<?php joints_top_nav(); ?>
-	</div>
+<div class="container top-bar" id="main-menu">
+    <div class="top-bar-left">
+        <a href="/">
+            <img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/mierins-logo.png?>" alt="site-logo">
+        </a>
+    </div>
+    <div class="top-bar-right">
+        <?php joints_top_nav(); ?>
+    </div>
 </div>
