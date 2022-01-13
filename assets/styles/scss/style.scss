@@ -64,6 +64,9 @@ CSS file.
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
+// Import vendor styles
+@import "vendor/owlcarousel";
+
 // Import your custom styles
 @import "global";
 @import "header";

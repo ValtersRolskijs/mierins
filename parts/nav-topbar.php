@@ -8,8 +8,9 @@
 
 <div class="container top-bar" id="main-menu">
     <div class="top-bar-left">
-        <a href="/">
-            <img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/mierins-logo.png?>" alt="site-logo">
+        <a class="logo-text" href="/">
+<!--            <img class="logo" src="--><?php //echo get_template_directory_uri(); ?><!--/assets/images/mierins-logo.png?>" alt="site-logo">-->
+            Mieriņš
         </a>
     </div>
     <div class="top-bar-right">

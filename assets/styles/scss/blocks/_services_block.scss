@@ -1,0 +1,45 @@
+.services-block {
+    background-color: #f6f6f6;
+
+    .service {
+        margin-bottom: 3rem;
+
+        &__title {
+            font-family: "Vujahday Script", cursive;
+            font-size: 3rem;
+        }
+
+        &__image {
+            width: 100%;
+            object-fit: cover;
+            max-height: 580px;
+        }
+
+        &-cell {
+            display: flex;
+            align-items: center;
+        }
+
+        &__content {
+            position: relative;
+            left: -30%;
+            background-color: white;
+            padding: 5rem 3rem;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            transition: all 300ms ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .service.direction--right {
+        flex-direction: row-reverse;
+
+        .service__content {
+            left: auto;
+            right: -30%;
+        }
+    }
+}

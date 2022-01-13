@@ -9,9 +9,22 @@
     .top-bar {
         height: 120px;
         background: transparent;
+        transition: 300ms ease;
 
-        .logo {
-            height: 100%;
+        //.logo {
+        //    height: 100%;
+        //}
+
+        .logo-text {
+            font-family: 'Sacramento', cursive;
+            font-size: 5rem;
+            color: white;
+            line-height: 1;
+
+            &:hover {
+                font-size: 4.5rem;
+                text-decoration: none;
+            }
         }
 
         ul {
@@ -20,11 +33,23 @@
 
         &-left, &-right {
             height: 100%;
-        }
-
-        &-right {
             display: flex;
             align-items: center;
+        }
+    }
+}
+
+header.fixed {
+    background-color: black;
+
+    .top-bar {
+        height: 60px;
+        .logo-text {
+            font-size: 3rem;
+
+            &:hover {
+                font-size: 2.5rem;
+            }
         }
     }
 }

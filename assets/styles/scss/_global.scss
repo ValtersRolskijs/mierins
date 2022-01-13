@@ -6,10 +6,20 @@ Stylesheet: Global Stylesheet
 
 @import url('https://fonts.googleapis.com/css2?family=Vujahday+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 
 .container {
     max-width: 1400px;
     margin: 0 auto;
+
+    &--large {
+        max-width: 1660px;
+    }
+}
+
+section {
+    padding: 5rem 0;
+    background-color: white;
 }
 
 a {
@@ -19,5 +29,45 @@ a {
     &:hover, a:focus {
         text-decoration: underline;
         color: orange;
+    }
+}
+
+.block-title {
+    font-family: "Vujahday Script", cursive;
+    font-weight: 700;
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+a.read-more {
+    &::after {
+        content: '\2192';
+        font-size: 24px;
+        line-height: 1;
+        margin-left: 10px;
+        transition: all 300ms ease;
+    }
+
+    &:hover {
+        text-decoration: none;
+
+        &::after {
+            margin-left: 15px;
+        }
+    }
+}
+
+.button {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: black;
+    padding: 0.5rem;
+    border: 3px solid black;
+    transition: all 300ms ease;
+
+    &:hover {
+        background-color: white;
+        color: black;
     }
 }
