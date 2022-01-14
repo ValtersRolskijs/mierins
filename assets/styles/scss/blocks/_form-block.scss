@@ -1,0 +1,46 @@
+.form-block {
+
+    .form {
+        max-width: 700px;
+        margin: 0 auto;
+
+        label {
+            .field-label {
+                position: relative;
+                background-color: white;
+                bottom: -15px;
+                left: 15px;
+                padding: 5px;
+                font-size: 16px;
+                z-index: 1;
+            }
+        }
+
+        input[type="text"],
+        input[type="email"]{
+            height: 42px;
+            margin: 0;
+        }
+
+        input, textarea {
+            border-radius: 8px;
+        }
+
+        input[type="submit"] {
+            margin: .9375rem;
+            padding: 1rem 1.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            font-size: 1.25rem;
+            transition: all 300ms ease;
+
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+}

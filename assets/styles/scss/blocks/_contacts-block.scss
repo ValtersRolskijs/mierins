@@ -1,0 +1,52 @@
+.contact-block {
+    background-color: #f6f6f6;
+
+    .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .card-box {
+        margin: 0 auto;
+        font-size: 1.5rem;
+        padding: 2rem;
+        background-color: white;
+        box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        border-radius: 15px;
+    }
+
+    .map-container {
+        margin-bottom: 5rem;
+    }
+
+    .map {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        overflow: hidden;
+    }
+
+    ul.contacts {
+        max-width: 560px;
+
+        li svg {
+            width: 24px;
+            height: 24px;
+            top: 0;
+        }
+    }
+
+    .work-hours {
+        max-width: 400px;
+
+        .day {
+            font-weight: 700;
+        }
+
+        .hours {
+            text-align: right;
+        }
+    }
+}

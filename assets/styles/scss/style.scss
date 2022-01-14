@@ -66,9 +66,13 @@ CSS file.
 
 // Import vendor styles
 @import "vendor/owlcarousel";
+@import "vendor/jquery.fancybox";
 
 // Import your custom styles
 @import "global";
 @import "header";
 @import "footer";
 @import "blocks/blocks";
+@import "blocks/form-block";
+@import "blocks/contacts-block";
+@import "blocks/gallery-block";

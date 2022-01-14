@@ -6,10 +6,18 @@
     z-index: 99;
     background-color: rgba(0,0,0,0.5);
 
+    @include breakpoint (large down) {
+        background-color: black;
+    }
+
     .top-bar {
         height: 120px;
         background: transparent;
         transition: 300ms ease;
+
+        @include breakpoint (large down) {
+            height: 60px;
+        }
 
         //.logo {
         //    height: 100%;
@@ -21,9 +29,17 @@
             color: white;
             line-height: 1;
 
+            @include breakpoint (large down) {
+                font-size: 3rem;
+            }
+
             &:hover {
                 font-size: 4.5rem;
                 text-decoration: none;
+
+                @include breakpoint (large down) {
+                    font-size: 2.5rem;
+                }
             }
         }
 
@@ -35,6 +51,14 @@
             height: 100%;
             display: flex;
             align-items: center;
+
+            @include breakpoint (large down) {
+                flex: 0 0 50%;
+            }
+        }
+
+        &-right {
+            justify-content: flex-end;
         }
     }
 }
@@ -85,10 +109,56 @@ header.fixed {
     .active > a {
         background: transparent;
     }
+
+    @include breakpoint (large down) {
+        &:not(.active) {
+            display: none;
+        }
+
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: black;
+        width: 100%;
+        padding: 3rem 2rem;
+        text-align: center;
+
+        li a:hover::after {
+            content: none;
+        }
+    }
 }
 
 body.admin-bar {
     .header {
         top: 32px;
+    }
+}
+
+.hamburger {
+    cursor: pointer;
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: white;
+    }
+
+    &.active {
+        .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
     }
 }

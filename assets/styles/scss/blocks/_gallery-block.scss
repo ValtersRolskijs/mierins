@@ -1,0 +1,99 @@
+.gallery-block {
+    .gallery-filter {
+        width: 300px;
+        padding: .75rem 2rem;
+        margin: 0 auto 3rem;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 300ms ease;
+        background-color: black;
+
+        span {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: orange;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 21px;
+            right: 17px;
+            width: 12px;
+            height: 12px;
+            border-left: 2px solid orange;
+            border-bottom: 2px solid orange;
+            transform: rotate(-45deg);
+            transition: all 300ms ease;
+        }
+
+        &__dropdown {
+            list-style: none;
+            text-align: left;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            border-top: none;
+            margin: 0 auto;
+            padding: 1rem 0;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            background-color: #4a4a4a;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.7);
+
+            visibility: visible;
+            opacity: 1;
+            transition: all 300ms ease;
+
+            &.hidden {
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            li {
+                a {
+                    display: block;
+                    color: orange;
+                    padding: 5px 1.25rem;
+                    font-size: 1.25rem;
+                }
+
+                &:hover a, &.active a {
+                    text-decoration: none;
+                    background-color: #6a6a6a;
+                }
+            }
+        }
+    }
+
+    .gallery-filter.active {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &::after {
+            transform: rotateX(180deg) rotateZ(-45deg);
+            top: 28px;
+        }
+    }
+
+    .gallery {
+        column-count: 4;
+        column-gap: 10px;
+
+        &__image {
+            margin: 0;
+            display: grid;
+            grid-template-rows: 1fr auto;
+            margin-bottom: 10px;
+            break-inside: avoid;
+
+            .image {
+
+            }
+        }
+    }
+}
