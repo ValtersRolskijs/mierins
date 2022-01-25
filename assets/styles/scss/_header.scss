@@ -19,10 +19,6 @@
             height: 60px;
         }
 
-        //.logo {
-        //    height: 100%;
-        //}
-
         .logo-text {
             font-family: 'Sacramento', cursive;
             font-size: 5rem;
@@ -45,6 +41,10 @@
 
         ul {
             background: transparent;
+
+            li {
+                font-size: 1.25rem;
+            }
         }
 
         &-left, &-right {
@@ -63,7 +63,7 @@
     }
 }
 
-header.fixed {
+.header.fixed {
     background-color: black;
 
     .top-bar {
@@ -133,6 +133,16 @@ header.fixed {
 body.admin-bar {
     .header {
         top: 32px;
+
+        @media (max-width: 782px) {
+            top: 46px;
+        }
+    }
+
+    .header.fixed {
+        @media (max-width: 782px) {
+            top: 0;
+        }
     }
 }
 

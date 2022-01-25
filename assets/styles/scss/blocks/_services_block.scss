@@ -3,10 +3,23 @@
 
     .service {
         margin-bottom: 3rem;
+        position: relative;
+
+        @include breakpoint (medium down) {
+            margin-bottom: 7rem;
+        }
+
+        @include breakpoint(small only) {
+            margin-bottom: 2rem;
+        }
 
         &__title {
             font-family: "Vujahday Script", cursive;
             font-size: 3rem;
+
+            @include breakpoint(medium down) {
+                font-size: 2rem;
+            }
         }
 
         .owl-item {
@@ -23,10 +36,6 @@
         &-cell {
             display: flex;
             align-items: center;
-
-            @include breakpoint (medium down) {
-                margin-bottom: -20%;
-            }
         }
 
         &__content {
@@ -38,12 +47,18 @@
             transition: all 300ms ease;
             z-index: 1;
 
-            @include breakpoint (large down) {
-                left: 0;
-                margin: 0 2rem;
-                width: 100%;
-                top: -50%;
+            @include breakpoint (medium down) {
                 padding: 2rem;
+                position: absolute;
+                bottom: -4.5rem;
+                left: 1rem;
+                right: 1rem;
+            }
+
+            @include breakpoint (small down) {
+                position: static;
+                margin: 0 0 2rem;
+                padding: 1.5rem;
             }
 
             &:hover {
@@ -59,9 +74,9 @@
             left: auto;
             right: -30%;
 
-            @include breakpoint (large down) {
-                left: 0;
-                right: 0;
+            @include breakpoint (medium down) {
+                left: 1rem;
+                right: 1rem;
             }
         }
     }

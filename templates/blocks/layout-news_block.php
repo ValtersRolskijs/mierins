@@ -3,8 +3,9 @@
  * Layout for Gallery block.
  */
 
-$block_title = get_sub_field( 'title' );
-$the_query   = new WP_Query( array( 'posts_per_page' => 6 ) );
+$block_title  = get_sub_field( 'title' );
+$archive_link = get_sub_field( 'archive_link' );
+$the_query    = new WP_Query( array( 'posts_per_page' => 6 ) );
 ?>
 
 <section class="news-block">
@@ -27,9 +28,11 @@ $the_query   = new WP_Query( array( 'posts_per_page' => 6 ) );
                     </div>
                 <?php endwhile; ?>
             </div>
-            <div class="all-news">
-                <a class="button" href="/"><?php esc_html_e( 'Visas ziņas', 'mierins' ); ?></a>
-            </div>
+            <?php if ( $archive_link ) : ?>
+                <div class="all-news">
+                    <a class="button" href="<?php echo esc_url( $archive_link ); ?>"><?php esc_html_e( 'Visas ziņas', 'mierins' ); ?></a>
+                </div>
+            <?php endif; ?>
         <?php endif; ?>
         <?php wp_reset_postdata(); ?>
     </div>

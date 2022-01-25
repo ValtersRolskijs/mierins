@@ -9,11 +9,29 @@ Stylesheet: Global Stylesheet
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 
 .container {
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
 
     &--large {
         max-width: 1660px;
+    }
+
+    @include breakpoint( large down ) {
+        padding: 0 15px;
+    }
+
+    @include breakpoint( small only ) {
+        padding: 0 10px;
+    }
+}
+
+.full-width {
+    @include breakpoint( large down ) {
+        margin: 0 - 15px;
+    }
+
+    @include breakpoint( small only ) {
+        margin: 0 -10px;
     }
 }
 
@@ -44,7 +62,7 @@ a {
     margin-bottom: 3rem;
 
     @include breakpoint (medium down) {
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-bottom: 1rem;
     }
 
@@ -54,6 +72,7 @@ a {
 
         @include breakpoint (medium down) {
             font-size: 2rem;
+            margin-bottom: 1rem;
         }
     }
 }
@@ -99,6 +118,7 @@ a.read-more {
         right: 0;
         display: flex;
         justify-content: space-between;
+        z-index: -1;
 
         button {
             span {

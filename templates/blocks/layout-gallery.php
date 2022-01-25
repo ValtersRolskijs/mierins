@@ -8,7 +8,7 @@ $sections     = get_sub_field( 'section' );
 $filter       = isset( $_GET['filter'] ) ? $_GET['filter'] : false;
 ?>
 
-<section class="gallery-block">
+<section id="gallery" class="gallery-block">
     <?php if ( $block_title ) : ?>
         <h2 class="block-title"><?php echo esc_html( $block_title ); ?></h2>
     <?php endif; ?>

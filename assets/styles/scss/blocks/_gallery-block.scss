@@ -1,4 +1,8 @@
 .gallery-block {
+    @include breakpoint(medium down) {
+        padding: 1.5rem 0;
+    }
+
     .gallery-filter {
         width: 300px;
         padding: .75rem 2rem;
@@ -10,11 +14,19 @@
         transition: all 300ms ease;
         background-color: black;
 
+        @include breakpoint(medium down) {
+            margin-bottom: 1.5rem;
+        }
+
         span {
             font-size: 1.5rem;
             text-transform: uppercase;
             font-weight: 700;
             color: orange;
+
+            @include breakpoint(medium down) {
+                font-size: 1rem;
+            }
         }
 
         &::after {
@@ -28,6 +40,10 @@
             border-bottom: 2px solid orange;
             transform: rotate(-45deg);
             transition: all 300ms ease;
+
+            @include breakpoint(medium down) {
+                top: 16px;
+            }
         }
 
         &__dropdown {
@@ -77,6 +93,10 @@
         &::after {
             transform: rotateX(180deg) rotateZ(-45deg);
             top: 28px;
+
+            @include breakpoint(medium down) {
+                top: 22px;
+            }
         }
     }
 
@@ -84,15 +104,19 @@
         column-count: 4;
         column-gap: 10px;
 
+        @include breakpoint(medium down) {
+            column-count: 2;
+            column-gap: 5px;
+        }
+
         &__image {
-            margin: 0;
+            margin: 0 0 10px;
             display: grid;
             grid-template-rows: 1fr auto;
-            margin-bottom: 10px;
             break-inside: avoid;
 
-            .image {
-
+            @include breakpoint(medium down) {
+                margin-bottom: 5px;
             }
         }
     }

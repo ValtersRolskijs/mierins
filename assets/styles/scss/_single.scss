@@ -1,0 +1,36 @@
+.single-news {
+    font-size: 18px;
+
+    h1, h2, h3, h4, h5 {
+        font-family: "Vujahday Script",cursive;
+        font-weight: 700;
+    }
+
+    .news-hero {
+        height: 500px;
+        position: relative;
+        padding: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin: 0
+        }
+
+        .block-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            margin: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

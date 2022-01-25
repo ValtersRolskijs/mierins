@@ -45,6 +45,9 @@ jQuery(document).ready(function($){
 		autoplaySpeed: 1000,
 		autoplayHoverPause: true,
 		animateOut: 'fadeOut',
+		mouseDrag: false,
+		touchDrag: false,
+		pullDrag: false,
 		items: 1
 	});
 

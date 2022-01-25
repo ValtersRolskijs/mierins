@@ -12,9 +12,14 @@
             font-size: 3rem;
         }
 
+        @include breakpoint(small only) {
+            font-size: 2rem;
+        }
+
         a {
             transition: all 300ms ease;
             line-height: 4rem;
+            white-space: nowrap;
 
             &:hover {
                 text-decoration: none;

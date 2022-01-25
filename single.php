@@ -4,29 +4,20 @@
  */
 
 get_header(); ?>
-			
-<div class="content">
 
-	<div class="inner-content grid-x grid-margin-x grid-padding-x">
+    <main class="content single-news">
 
-		<main class="main small-12 medium-8 large-8 cell" role="main">
-		
-		    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		
-		    	<?php get_template_part( 'parts/loop', 'single' ); ?>
-		    	
-		    <?php endwhile; else : ?>
-		
-		   		<?php get_template_part( 'parts/content', 'missing' ); ?>
+        <section class="news-hero">
+            <?php the_post_thumbnail( 'full' ); ?>
+            <h1 class="block-title"><?php the_title(); ?></h1>
+        </section>
 
-		    <?php endif; ?>
+        <section class="news-content">
+            <div class="container">
+                <?php the_content(); ?>
+            </div>
+        </section>
 
-		</main> <!-- end #main -->
-
-		<?php get_sidebar(); ?>
-
-	</div> <!-- end #inner-content -->
-
-</div> <!-- end #content -->
+    </main>
 
 <?php get_footer(); ?>
